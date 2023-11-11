@@ -1,21 +1,29 @@
-from mongo_dal import MongoDal, KisserNotExist, KisserAlreadyExist
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-import consts
 import json
-from bson import json_util
 
-app = Flask(__name__)
+from bson import json_util
+from flask import Flask, request
+from flask_cors import CORS
+
+from mongo_dal import MongoDal, KisserNotExist, KisserAlreadyExist
+
+app = Flask(__name__, static_folder="dist/")
 CORS(app)
 mongo_connection = None
 
+@app.errorhandler(404)
+def not_found(e):
+    return app.send_static_file('index.html')
 
 @app.route('/')
 def index():
-    return "Hello world"
+    return app.send_static_file("index.html")
+
+@app.route('/<path:path>', methods=['GET'])
+def static_proxy(path):
+    return app.send_static_file(path)
 
 
-@app.route('/new_kisser', methods=['POST'])
+@app.route('/api/new_kisser', methods=['POST'])
 def add_kisser():
     try:
         request_body = request.get_json()
@@ -34,7 +42,7 @@ def add_kisser():
         return f"Error - {err}"
 
 
-@app.route('/new_kiss', methods=['POST'])
+@app.route('/api/new_kiss', methods=['POST'])
 def add_kiss():
     try:
         request_body = request.get_json()
@@ -48,17 +56,17 @@ def add_kiss():
         return f"Error - {err}"
 
 
-@app.route('/get_kisser', methods=['GET'])
+@app.route('/api/get_kisser', methods=['GET'])
 def get_kisser():
     return str(list(mongo_connection.kissers_collection.find(request.get_json())))
 
 
-@app.route('/get_kiss', methods=['GET'])
+@app.route('/api/get_kiss', methods=['GET'])
 def get_kiss():
     return str(list(mongo_connection.kisses_collection.find(request.get_json())))
 
 
-@app.route('/get_all_kissers', methods=["GET"])
+@app.route('/api/get_all_kissers', methods=["GET"])
 def get_all_kissers():
     kissers = list(mongo_connection.kissers_collection.find(request.get_json()))
     return {
@@ -66,7 +74,7 @@ def get_all_kissers():
     }
 
 
-@app.route('/get_all_kisses', methods=['GET'])
+@app.route('/api/get_all_kisses', methods=['GET'])
 def get_all_kisses():
     kissers = list(mongo_connection.kissers_collection.find(request.get_json()))
     kisses = list(mongo_connection.kisses_collection.find(request.get_json()))
@@ -78,4 +86,4 @@ def get_all_kisses():
 
 if __name__ == '__main__':
     mongo_connection = MongoDal()
-    app.run(host=consts.HUB_SERVICE[consts.HOST_KEY], port=consts.HUB_SERVICE[consts.PORT_KEY])
+    app.run(host="0.0.0.0", port=80)
