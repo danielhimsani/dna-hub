@@ -3,7 +3,7 @@ from functools import wraps
 
 from bson import json_util
 from flask import Flask, request, Response
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 from mongo_dal import MongoDal, KisserNotExist, KisserAlreadyExist
 
@@ -38,24 +38,28 @@ def handle_cors(func):
 
 @app.errorhandler(404)
 @handle_cors
+@cross_origin(supports_credentials=True)
 def not_found(e):
     return app.send_static_file('index.html')
 
 
 @app.route('/')
 @handle_cors
+@cross_origin(supports_credentials=True)
 def index():
     return app.send_static_file("index.html")
 
 
 @app.route('/<path:path>', methods=['GET'])
 @handle_cors
+@cross_origin(supports_credentials=True)
 def static_proxy(path):
     return app.send_static_file(path)
 
 
 @app.route('/api/new_kisser', methods=['POST'])
 @handle_cors
+@cross_origin(supports_credentials=True)
 def add_kisser():
     try:
         request_body = request.get_json()
@@ -76,6 +80,7 @@ def add_kisser():
 
 @app.route('/api/new_kiss', methods=['POST'])
 @handle_cors
+@cross_origin(supports_credentials=True)
 def add_kiss():
     try:
         request_body = request.get_json()
@@ -91,18 +96,21 @@ def add_kiss():
 
 @app.route('/api/get_kisser', methods=['GET'])
 @handle_cors
+@cross_origin(supports_credentials=True)
 def get_kisser():
     return str(list(mongo_connection.kissers_collection.find(request.get_json())))
 
 
 @app.route('/api/get_kiss', methods=['GET'])
 @handle_cors
+@cross_origin(supports_credentials=True)
 def get_kiss():
     return str(list(mongo_connection.kisses_collection.find(request.get_json())))
 
 
 @app.route('/api/get_all_kissers', methods=["GET"])
 @handle_cors
+@cross_origin(supports_credentials=True)
 def get_all_kissers():
     kissers = list(mongo_connection.kissers_collection.find(request.get_json()))
     return {
@@ -112,6 +120,7 @@ def get_all_kissers():
 
 @app.route('/api/get_all_kisses', methods=['GET'])
 @handle_cors
+@cross_origin(supports_credentials=True)
 def get_all_kisses():
     kissers = list(mongo_connection.kissers_collection.find(request.get_json()))
     kisses = list(mongo_connection.kisses_collection.find(request.get_json()))
