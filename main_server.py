@@ -13,7 +13,7 @@ mongo_connection = None
 
 
 def add_cors_preflight_headers(response):
-    response.headers['Access-Control-Allow-Origin'] = request.origin
+    response.headers['Access-Control-Allow-Origin'] = "*"
     return response
 
 
