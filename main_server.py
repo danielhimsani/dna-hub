@@ -13,15 +13,9 @@ mongo_connection = None
 
 
 def add_cors_preflight_headers(response):
-    allow_request = 'api' in request.origin
-    if allow_request:
-        response.headers['Access-Control-Allow-Origin'] = request.origin
-    if request.method == 'OPTIONS':
-        response.headers['Access-Control-Allow-Methods'] = 'GET, OPTIONS'
-        response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
-        # Allow chrome to access private network ajax requests
-        response.headers['Access-Control-Allow-Private-Network'] = 'true'
+    response.headers['Access-Control-Allow-Origin'] = request.origin
     return response
+
 
 def handle_cors(func):
     @wraps(func)
@@ -32,8 +26,8 @@ def handle_cors(func):
             response = func(*args, **kwargs)
         response = add_cors_preflight_headers(response)
         return response
-    return decorator
 
+    return decorator
 
 
 @app.errorhandler(404)
