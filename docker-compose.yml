@@ -14,7 +14,3 @@ services:
       - 27017:27017
     volumes:
     - './dev/data/db:/data/db'
-    links:
-      - mongo
-    depends_on:
-      - mongo
