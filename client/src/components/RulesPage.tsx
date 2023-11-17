@@ -5,9 +5,9 @@ import {faFaceKissWinkHeart} from "@fortawesome/free-solid-svg-icons";
 const RulesPageStyle = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 3em;
   direction: rtl;
-  width: 100%;
+  padding: 2em 0;
+  font-size: 1em;
 `;
 
 
