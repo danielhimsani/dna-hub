@@ -1,26 +1,47 @@
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
-import {Alert, Button, Card, Input, InputLabel, MenuItem, Select, Snackbar} from "@mui/material";
+import {Alert, Button, Card, Input, InputLabel, MenuItem, NativeSelect, Snackbar} from "@mui/material";
 import {useEffect, useState} from "react";
 import {useForm} from "react-hook-form";
+import kiss from '../assets/kiss.png';
 
+
+const KissImage = styled.img`
+  width: 70%;
+  margin: 1em;
+`;
 
 const NewKisserStyle = styled('div')`
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   direction: rtl;
+  padding: 2.5em 0;
+  font-size: 2.5em;
 `;
 
 const NewKisserCard = styled(Card)`
-  padding: 0.5em;
-  margin: 0.75em;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0.5em;
+  margin-top: 0.5em;
+`;
+
+const ButtonStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.5em;
+`;
+
+const ToastMessageStyled = styled.div`
+  display: flex;
+  direction: rtl;
+  width: 80%;
 `;
 
 
@@ -81,11 +102,13 @@ export function NewKisser() {
                 autoHideDuration={6000}
                 onClose={handleClose}
             >
-                <Alert onClose={handleClose} severity="success" sx={{width: '100%'}}>
-                    {toastMessage}
-                </Alert>
+                <ToastMessageStyled>
+                    <Alert onClose={handleClose} severity="success" sx={{width: '100%'}}>
+                        {toastMessage}
+                    </Alert>
+                </ToastMessageStyled>
             </Snackbar>
-            הוסף מנשק\ת חדש לDNA!
+            מנשק חדש!😘
 
             <NewKisserCard>
                 <form onSubmit={
@@ -95,23 +118,24 @@ export function NewKisser() {
                     <Input {...methods.register("kisser_name", {required: true})} autoComplete={"off"}/>
 
                     <InputLabel>מין</InputLabel>
-                    <Select {...methods.register("gender", {required: true})} >
+                    <NativeSelect {...methods.register("gender", {required: true})} >
                         <MenuItem value={"male"}>גבר</MenuItem>
                         <MenuItem value={"female"}>אישה</MenuItem>
 
-                    </Select>
+                    </NativeSelect>
 
                     <InputLabel>עם מי התנשק?</InputLabel>
-                    <Select  {...methods.register("kiss_with", {required: true})}>
+                    <NativeSelect  {...methods.register("kiss_with", {required: true})}>
                         {kissers.map(kisser => {
                             return (
                                 <MenuItem key={kisser.id} value={[kisser.id]}>{kisser.name}</MenuItem>
                             )
                         })}
-                    </Select><br/>
-                    <Button type={"submit"}>הוסף</Button>
+                    </NativeSelect><br/>
+                    <ButtonStyled><Button variant={"contained"} type={"submit"}>הוסף</Button></ButtonStyled>
                 </form>
             </NewKisserCard>
+            <KissImage src={kiss} alt={"kiss"}/>
 
         </NewKisserStyle>
 
