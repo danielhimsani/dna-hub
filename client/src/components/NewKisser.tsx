@@ -67,7 +67,7 @@ export function NewKisser() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: data,
+            body: JSON.stringify(data),
         });
         setToastMessage(`${data.kisser_name} is added successfully!`);
         handleClick();
