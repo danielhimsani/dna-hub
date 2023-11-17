@@ -2,7 +2,7 @@ import json
 from functools import wraps
 
 from bson import json_util
-from flask import Flask, request, Response, make_response
+from flask import Flask, request, Response, make_response, jsonify
 from flask_cors import CORS, cross_origin
 
 from mongo_dal import MongoDal, KisserNotExist, KisserAlreadyExist
@@ -107,12 +107,9 @@ def get_kiss():
 @cross_origin(supports_credentials=True)
 def get_all_kissers():
     kissers = list(mongo_connection.kissers_collection.find(request.get_json()))
-    r = make_response((json.dumps({
+    return jsonify({
         "kissers": json.loads(json_util.dumps(kissers)),
-    }),
-                       200,
-                       {'Content-Type': 'application/json'}))
-    return r
+    })
 
 
 @app.route('/api/get_all_kisses', methods=['GET'])
@@ -121,13 +118,10 @@ def get_all_kissers():
 def get_all_kisses():
     kissers = list(mongo_connection.kissers_collection.find(request.get_json()))
     kisses = list(mongo_connection.kisses_collection.find(request.get_json()))
-    r = make_response((json.dumps({
+    return jsonify({
         "kissers": json.loads(json_util.dumps(kissers)),
         "kisses": json.loads(json_util.dumps(kisses))
-    }),
-                       200,
-                       {'Content-Type': 'application/json'}))
-    return r
+    })
 
 
 if __name__ == '__main__':
