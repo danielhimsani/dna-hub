@@ -4,6 +4,14 @@ import {Alert, Button, Card, InputLabel, MenuItem, NativeSelect, Snackbar} from 
 import {useEffect, useState} from "react";
 import kiss from "../assets/kiss.png";
 
+const ButtonStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.5em;
+`;
+
 const KissImage = styled.img`
   width: 5em;
   margin: 1em;
@@ -119,7 +127,7 @@ export function NewKiss() {
                             )
                         })}
                     </NativeSelect>
-                    <Button variant={"contained"} type={"submit"}>הוסף</Button>
+                    <ButtonStyled><Button variant={"contained"} type={"submit"}>הוסף</Button></ButtonStyled>
                 </CardStyled>
             </form>
             <KissImage src={kiss} alt={"kiss"}/>

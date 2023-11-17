@@ -1,4 +1,4 @@
-import {ReactFlow, useEdgesState, useNodesState} from "reactflow";
+import {Controls, MiniMap, ReactFlow, useEdgesState, useNodesState} from "reactflow";
 import {useEffect} from "react";
 import 'reactflow/dist/style.css';
 /** @jsxImportSource @emotion/react */
@@ -104,7 +104,10 @@ export function DnaPage() {
                 edges={edges}
                 fitView
                 style={nodeStyle}
-            />
+            >
+                <Controls/>
+                <MiniMap/>
+            </ReactFlow>
         </DnaPageStyle>
     )
 }
