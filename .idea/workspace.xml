@@ -11,9 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9177ab33-6332-4f2b-8243-30cecca638c9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dna-hub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dna-hub.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index-1480b70d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index-2c3ff6f5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index-4feb75e2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index-916f14d9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index-99a2c6c1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index-b42523fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index-d7044791.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index-f2b00f03.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/dna-solid.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/vite.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
