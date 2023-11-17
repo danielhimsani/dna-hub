@@ -48,7 +48,7 @@ export function NewKiss() {
     }
 
     useEffect(() => {
-        fetch("http://3.91.244.167/:80/api/get_all_kissers", {mode: 'no-cors'})
+        fetch("http://3.91.244.167/api/get_all_kissers", {mode: 'no-cors'})
             .then((value) => value.json())
             .then(data => ParseKissers(data));
     }, []);

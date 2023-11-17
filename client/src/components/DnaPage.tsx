@@ -91,7 +91,7 @@ export function DnaPage() {
     }
 
     useEffect(() => {
-        fetch("http://3.91.244.167/:80/api/get_all_kisses", {mode: 'no-cors'})
+        fetch("http://3.91.244.167/api/get_all_kisses", {mode: 'no-cors'})
             .then((value) => value.json())
             .then(data => ParseNodes(data));
     }, [])
