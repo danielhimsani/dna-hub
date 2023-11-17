@@ -56,7 +56,7 @@ def static_proxy(path):
 @cross_origin(supports_credentials=True)
 def add_kisser():
     try:
-        request_body = request.get_json()
+        request_body = json.loads(request.data)
         kisser_name = request_body['kisser_name']
         kisser_gender = request_body['gender']
         kiss_with = request_body['kiss_with']
