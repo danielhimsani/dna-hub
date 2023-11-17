@@ -59,10 +59,9 @@ export function NewKiss() {
             method: "POST",
             mode: 'no-cors',
             headers: {
-                Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data),
+            body: data,
         });
         setToastMessage(`${data.kisser_name} is added successfully!`);
         handleClick();
