@@ -57,7 +57,6 @@ export function NewKiss() {
         e.target.reset();
         fetch("http://3.91.244.167/api/new_kiss", {
             method: "POST",
-            mode: 'no-cors',
             headers: {
                 'Content-Type': 'application/json',
             },

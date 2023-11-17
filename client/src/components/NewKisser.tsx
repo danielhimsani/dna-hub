@@ -64,7 +64,6 @@ export function NewKisser() {
         e.target.reset();
         fetch("http://3.91.244.167/api/new_kisser", {
             method: "POST",
-            mode: 'no-cors',
             headers: {
                 'Content-Type': 'application/json',
             },
