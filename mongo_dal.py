@@ -20,7 +20,6 @@ class MongoDal:
         self.kissers_collection.create_index('persons', unique=False)
         self.kisses_collection = self.mongo_db['kisses']
         self.kisses_collection.create_index('persons', unique=False)
-        self.add_kisser("דניאל הימסני", "male")
 
     def add_kisser(self, kisser_name: str, kisser_sex: str):
         if len(list(self.kissers_collection.find({"name": kisser_name}))) > 0:

@@ -55,7 +55,7 @@ export function NewKiss() {
 
     const handleSubmit = function (data, e) {
         e.target.reset();
-        fetch("http://3.91.244.167/:80/api/new_kiss", {
+        fetch("http://3.91.244.167/api/new_kiss", {
             method: "POST",
             mode: 'no-cors',
             headers: {

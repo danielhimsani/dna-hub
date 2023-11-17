@@ -62,7 +62,7 @@ export function NewKisser() {
 
     const handleSubmit = function (data, e) {
         e.target.reset();
-        fetch("http://3.91.244.167/:80/api/new_kisser", {
+        fetch("http://3.91.244.167/api/new_kisser", {
             method: "POST",
             mode: 'no-cors',
             headers: {
