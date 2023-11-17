@@ -7,7 +7,7 @@ import kiss from '../assets/kiss.png';
 
 
 const KissImage = styled.img`
-  width: 70%;
+  width: 5em;
   margin: 1em;
 `;
 
@@ -119,8 +119,8 @@ export function NewKisser() {
 
                     <InputLabel>מין</InputLabel>
                     <NativeSelect {...methods.register("gender", {required: true})} >
-                        <MenuItem value={"male"}>גבר</MenuItem>
-                        <MenuItem value={"female"}>אישה</MenuItem>
+                        <option value={"male"}>גבר</option>
+                        <option value={"female"}>אישה</option>
 
                     </NativeSelect>
 
@@ -128,7 +128,7 @@ export function NewKisser() {
                     <NativeSelect  {...methods.register("kiss_with", {required: true})}>
                         {kissers.map(kisser => {
                             return (
-                                <MenuItem key={kisser.id} value={[kisser.id]}>{kisser.name}</MenuItem>
+                                <option key={kisser.id} value={kisser.id}>{kisser.name}</option>
                             )
                         })}
                     </NativeSelect><br/>

@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import kiss from "../assets/kiss.png";
 
 const KissImage = styled.img`
-  width: 70%;
+  width: 5em;
   margin: 1em;
 `;
 
@@ -106,7 +106,7 @@ export function NewKiss() {
                     <NativeSelect  {...methods.register("kisser1")}>
                         {kissers.map(kisser => {
                             return (
-                                <MenuItem key={kisser.id} value={[kisser.id]}>{kisser.name}</MenuItem>
+                                <option key={kisser.id} value={kisser.id}>{kisser.name}</option>
                             )
                         })}
                     </NativeSelect>
@@ -115,7 +115,7 @@ export function NewKiss() {
                     <NativeSelect  {...methods.register("kisser2")}>
                         {kissers.map(kisser => {
                             return (
-                                <MenuItem key={kisser.id} value={[kisser.id]}>{kisser.name}</MenuItem>
+                                <option key={kisser.id} value={kisser.id}>{kisser.name}</option>
                             )
                         })}
                     </NativeSelect>
