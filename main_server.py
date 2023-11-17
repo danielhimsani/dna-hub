@@ -106,7 +106,7 @@ def get_kiss():
 @handle_cors
 @cross_origin(supports_credentials=True)
 def get_all_kissers():
-    kissers = list(mongo_connection.kissers_collection.find(request.get_json()))
+    kissers = list(mongo_connection.kissers_collection.find({}))
     return jsonify({
         "kissers": json.loads(json_util.dumps(kissers)),
     })
@@ -116,8 +116,8 @@ def get_all_kissers():
 @handle_cors
 @cross_origin(supports_credentials=True)
 def get_all_kisses():
-    kissers = list(mongo_connection.kissers_collection.find(request.get_json()))
-    kisses = list(mongo_connection.kisses_collection.find(request.get_json()))
+    kissers = list(mongo_connection.kissers_collection.find({}))
+    kisses = list(mongo_connection.kisses_collection.find({}))
     return jsonify({
         "kissers": json.loads(json_util.dumps(kissers)),
         "kisses": json.loads(json_util.dumps(kisses))
