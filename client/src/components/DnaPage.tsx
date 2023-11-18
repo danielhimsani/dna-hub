@@ -9,8 +9,7 @@ import DNANode from "./DNANode";
 
 const DnaPageStyle = styled('div')`
   width: 100%;
-  height: 100%;
-  position: relative;
+  height: 97%;
   background-color: white;
 `;
 

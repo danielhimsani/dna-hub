@@ -117,6 +117,8 @@ def get_all_kissers():
 @cross_origin(supports_credentials=True)
 def get_all_kisses():
     kissers = list(mongo_connection.kissers_collection.find({}))
+    if (len(kissers) == 0):
+           mongo_connection.add_kisser(kisser_name="דניאל הימסני", kisser_sex="male")
     kisses = list(mongo_connection.kisses_collection.find({}))
     return jsonify({
         "kissers": json.loads(json_util.dumps(kissers)),
