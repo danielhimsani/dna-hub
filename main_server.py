@@ -62,8 +62,7 @@ def add_kisser():
         kiss_with = request_body['kiss_with']
         mongo_connection.add_kisser(kisser_name=kisser_name, kisser_sex=kisser_gender)
         kisser_id = mongo_connection.get_kisser_id_by_name(kisser_name)
-        for kiss in kiss_with:
-            mongo_connection.add_kiss(kisser1_id=kisser_id, kisser2_id=kiss)
+        mongo_connection.add_kiss(kisser1_id=kisser_id, kisser2_id=kiss_with)
 
         return "OK"
     except KisserAlreadyExist as err:
