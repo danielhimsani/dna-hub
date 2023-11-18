@@ -33,7 +33,7 @@ class MongoDal:
         kisser2_id = self.kissers_collection.find_one({"_id": ObjectId(kisser2_id)})
         if len(list(kisser2_id)) == 0:
             raise KisserNotExist(f"{kisser2_id} not exist!")
-        self.kisses_collection.insert_one({"kissers": [kisser1_id['_id'], kisser2_id['_id']]})
+        self.kisses_collection.insert_one({"kissers": [kisser1_id, kisser2_id})
 
     def get_kisser_id_by_name(self, kisser_name: str):
         kisser_obj = self.kissers_collection.find_one({"data.label": kisser_name})

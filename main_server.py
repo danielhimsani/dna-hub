@@ -77,8 +77,8 @@ def add_kisser():
 def add_kiss():
     try:
         request_body = request.get_json()
-        kisser1_id = request_body['kisser1'][0]
-        kisser2_id = request_body['kisser2'][0]
+        kisser1_id = request_body['kisser1']
+        kisser2_id = request_body['kisser2']
         mongo_connection.add_kiss(kisser1_id, kisser2_id)
         return "200"
     except KisserNotExist as err:
