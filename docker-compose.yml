@@ -9,7 +9,7 @@ services:
     depends_on:
       - mongo
   mongo:
-    image: library/mongo:3.4.10
+    image: library/mongo:latest
     ports:
       - 27017:27017
     volumes:

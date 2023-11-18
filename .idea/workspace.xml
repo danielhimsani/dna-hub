@@ -10,20 +10,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9177ab33-6332-4f2b-8243-30cecca638c9" name="Default Changelist" comment="">
+    <list default="true" id="9177ab33-6332-4f2b-8243-30cecca638c9" name="Default Changelist" comment="a">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-1480b70d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-2c3ff6f5.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-4feb75e2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-916f14d9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-99a2c6c1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-b42523fa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-d7044791.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-f2b00f03.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/dna-solid.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/NewKisser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/NewKisser.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +26,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2Y1qi6g7BWeLU05IkSu4DIAVkbn" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -41,12 +37,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="restartRequiresConfirmation" value="false" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "javascript.nodejs.core.library.configured.version": "16.14.2",
+    "javascript.nodejs.core.library.typings.version": "16.18.61",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\workspace\\developing\\Apps\\dna-hub\\client\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workspace\developing\Apps\dna-hub\server" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="main_server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="dna-hub" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -68,12 +76,23 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main_server" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -84,6 +103,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699703557376</updated>
+      <workItem from="1700234857007" duration="14710000" />
     </task>
     <task id="LOCAL-00001" summary="Added the site">
       <created>1699703709327</created>
@@ -92,8 +112,25 @@
       <option name="project" value="LOCAL" />
       <updated>1699703709328</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="a">
+      <created>1700226303208</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700226303208</updated>
+    </task>
+    <task id="LOCAL-00003" summary="a">
+      <created>1700246313369</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700246313369</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -105,32 +142,10 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added the site" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the site" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1311" height="154" key="GridCell.Tab.0.bottom" timestamp="1699738569868">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1311" height="154" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-374.1920.1040@0.0.1366.728" timestamp="1699738569868" />
-    <state width="1311" height="154" key="GridCell.Tab.0.center" timestamp="1699738569868">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1311" height="154" key="GridCell.Tab.0.center/0.0.1366.728/1366.-374.1920.1040@0.0.1366.728" timestamp="1699738569868" />
-    <state width="1311" height="154" key="GridCell.Tab.0.left" timestamp="1699738569868">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1311" height="154" key="GridCell.Tab.0.left/0.0.1366.728/1366.-374.1920.1040@0.0.1366.728" timestamp="1699738569868" />
-    <state width="1311" height="154" key="GridCell.Tab.0.right" timestamp="1699738569868">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1311" height="154" key="GridCell.Tab.0.right/0.0.1366.728/1366.-374.1920.1040@0.0.1366.728" timestamp="1699738569868" />
-    <state x="328" y="0" width="710" height="728" key="find.popup" timestamp="1699717873185">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="328" y="0" width="710" height="728" key="find.popup/0.0.1366.728/1366.-374.1920.1040@0.0.1366.728" timestamp="1699717873185" />
+    <MESSAGE value="a" />
+    <option name="LAST_COMMIT_MESSAGE" value="a" />
   </component>
 </project>
